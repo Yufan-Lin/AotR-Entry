@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://aframe.io/releases/0.9.1/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.0/aframe/build/aframe-ar.js"></script>
+    <link rel="stylesheet" href="style/bootstrap.min.css">
+    <link rel="stylesheet" href="style/app.css">
+    <title>戒指流浪記</title>
+</head>
+<body>
+    <a-scene embedded arjs='trackingMethod: best; debugUIEnabled: false;' vr-mode-ui="enabled: false">
+
+        <a-marker id="marker" preset='custom' type='pattern' url='data/marker.patt'>
+        <!-- <a-marker id="marker" preset='hiro' type='pattern' url='data/marker.patt'> -->
+        </a-marker>
+        <a-entity camera></a-entity>
+
+    </a-scene>
+
+    <div id="alert-popover" class="vertical-center">
+        <div>
+            <h4>戒指流浪記</h4>
+            <p>如無法開啟，請複製連結到可支援的瀏覽器中開啟</p>
+            <ul>
+                <li>iOS請使用Safari開啟</li>
+                <li>Android建議用Chrome或火狐開啟</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center;">
+            <button id="button-start" class="btn btn-info" onclick="hideAlertView()">開始體驗</button>
+            <button id="button-copy-link" class="btn btn-info" onclick="copyLink()">複製連結</button>
+        </div>
+
+        <div>
+            <input id="url-input" type="text" value="">
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>
