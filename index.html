@@ -13,9 +13,10 @@
     <a-scene embedded arjs='trackingMethod: best; debugUIEnabled: false; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960;' vr-mode-ui="enabled: false">
 
         <a-nft
+        ntfLoaded
         id="marker"
         type="nft"
-        url="AotR-Entry/data/marker"
+        url="AotR/data/marker"
         smooth="true"
         smoothCount="10"
         smoothTolerance=".01"
@@ -26,6 +27,13 @@
 
     </a-scene>
 
+    <div id="loading-indicator" class="popover vertical-center">
+        <div class="align-items-center text-center">
+            <div class="spinner-border text-info" role="status" aria-hidden="true"></div>
+            <strong> 讀取中...</strong>
+        </div>
+    </div>
+
     <div id="alert-popover" class="vertical-center">
         <div>
             <h4>戒指流浪記</h4>
@@ -35,7 +43,7 @@
                 <li>Android建議用Chrome或火狐開啟</li>
             </ul>
         </div>
-
+        
         <div style="text-align: center;">
             <button id="button-start" class="btn btn-info" onclick="hideAlertView()">開始體驗</button>
             <button id="button-copy-link" class="btn btn-info" onclick="copyLink()">複製連結</button>
@@ -45,6 +53,7 @@
             <input id="url-input" type="text" value="">
         </div>
     </div>
+
     <script src="js/app.js"></script>
 </body>
 </html>

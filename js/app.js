@@ -5,6 +5,13 @@ window.onload = function() {
     var input = document.querySelector('input');
     input.value = document.URL;
 }
+
+window.addEventListener('arjs-nft-loaded', function(ev){
+    let loadingIndicator = document.querySelector('#loading-indicator');
+    loadingIndicator.style.display = "none";
+    console.log("Loading finished!!");
+})
+
 let link = 'https://yufan-lin.github.io/AotR/#/';
 // function
 
